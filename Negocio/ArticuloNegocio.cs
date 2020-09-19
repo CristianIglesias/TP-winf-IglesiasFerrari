@@ -80,6 +80,7 @@ namespace Negocio
             Comando.Parameters.AddWithValue("@IdMarca", nuevo.Marca.Id);
             Comando.Connection = Conexion;
             Conexion.Open();
+            //Hola Cristian cotitooo
             Comando.ExecuteNonQuery();
 
         }
