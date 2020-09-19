@@ -27,3 +27,9 @@ C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferra
 C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferrari\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
 C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferrari\Dominio\obj\Debug\Dominio.dll
 C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferrari\Dominio\obj\Debug\Dominio.pdb
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Dominio\bin\Debug\Dominio.dll
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Dominio\bin\Debug\Dominio.pdb
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Dominio\obj\Debug\Dominio.csprojAssemblyReference.cache
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Dominio\obj\Debug\Dominio.dll
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Dominio\obj\Debug\Dominio.pdb

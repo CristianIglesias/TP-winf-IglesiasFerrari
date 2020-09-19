@@ -10,7 +10,7 @@ namespace Dominio
     public class Articulos
     {
         //viendo el tutorial de masssiPrograma para usar gitBash
-        private int ID;
+        public int Id { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
@@ -22,6 +22,7 @@ namespace Dominio
         public Categoria categoria { get; set; }
 
         public Marca Marca { get; set; }
+
 
 
     }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 using Dominio;
+using System.Runtime.InteropServices;
+
 namespace Ventana1
 {
     public partial class Form1 : Form
@@ -64,5 +66,13 @@ namespace Ventana1
  
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulos art;
+            art = (Articulos)dgvGrilla.CurrentRow.DataBoundItem;
+            fmAlta modificar = new fmAlta(art);
+            Cargar();
+
+        }
     }
 }

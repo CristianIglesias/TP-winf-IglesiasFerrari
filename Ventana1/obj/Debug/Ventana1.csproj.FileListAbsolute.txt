@@ -77,3 +77,19 @@ C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferra
 C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferrari\Ventana1\obj\Debug\Ventana1.csproj.CopyComplete
 C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferrari\Ventana1\obj\Debug\Ventana1.exe
 C:\Users\Cristian\Documents\GitHub\Práctica Cris&Chivi\TPWinform-Iglesias_Ferrari\Ventana1\obj\Debug\Ventana1.pdb
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Ventana1.exe.config
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Ventana1.exe
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Ventana1.pdb
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Dominio.dll
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Negocio.dll
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Dominio.pdb
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\bin\Debug\Negocio.pdb
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.csprojAssemblyReference.cache
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.fmAlta.resources
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.Form1.resources
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.Properties.Resources.resources
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.csproj.GenerateResource.cache
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.csproj.CoreCompileInputs.cache
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.csproj.CopyComplete
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.exe
+C:\Users\Chivi\Desktop\TpWInformCrisChivi\TP-winf-IglesiasFerrari\Ventana1\obj\Debug\Ventana1.pdb

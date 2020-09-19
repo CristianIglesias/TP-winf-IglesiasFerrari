@@ -14,10 +14,18 @@ namespace Ventana1
 {
     public partial class fmAlta : Form
     {
+        private Articulos art = null;
         public fmAlta()
         {
             InitializeComponent();
         }
+        public fmAlta(Articulos Art)
+        {
+            InitializeComponent();
+            art = Art;
+
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -26,7 +34,7 @@ namespace Ventana1
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulos nuevo = new Articulos();
+            
             ArticuloNegocio negocio = new ArticuloNegocio();
             ///agregar validaciones chequeado, pero masomenos. hay que ponerle un poquito mas de polenta
             bool banderita = true;
@@ -47,14 +55,29 @@ namespace Ventana1
             }
             if(banderita)
             {   ///puede quedar pendiente igual pero me pone nervioso xd
-                nuevo.Codigo = txtCodArt.Text; 
-                nuevo.Descripcion = txtDescripcion.Text;
-                nuevo.Nombre = txtNombre.Text;
-                nuevo.categoria = (Categoria)cbCategoria.SelectedItem;
-                nuevo.Marca = (Marca)cbMarca.SelectedItem;
-                nuevo.Imagen = txtImagen.Text;
-                negocio.agregar(nuevo);
-                MessageBox.Show("Agregado con exito REY/REYNA", "Exito");
+
+                if (art == null)
+                    art = new Articulos();
+                
+                               
+                art.Codigo = txtCodArt.Text;
+                art.Descripcion = txtDescripcion.Text;
+                art.Nombre = txtNombre.Text;
+                art.categoria = (Categoria)cbCategoria.SelectedItem;
+                art.Marca = (Marca)cbMarca.SelectedItem;
+                art.Imagen = txtImagen.Text;
+                //negocio.agregar(art);
+
+                if (art.Id == 0)
+                {
+                    negocio.agregar(art);
+                }
+                else
+                {
+                    negocio.eliminar(art);
+                }
+
+                MessageBox.Show("Operación realizada con exito REY/REYNA", "Exito");
             }
             else { MessageBox.Show("Campos Incompletos o Invalidos", "Error Campos"); }
             Close();
@@ -66,6 +89,24 @@ namespace Ventana1
             cbCategoria.DataSource = Catnegocio.Listar();
             MarcaNegocio marcNegocio = new MarcaNegocio();
             cbMarca.DataSource = marcNegocio.Listar();
+            cbCategoria.ValueMember = "Id";
+            cbCategoria.DisplayMember = "Descripcion";
+            //if(cbCategoria.SelectedIndex >0)
+                cbCategoria.SelectedIndex = -1;
+            //parte s de marca iguales a esto
+            if (art != null)
+            {
+                txtCodArt.Text = art.Codigo;
+                txtNombre.Text = art.Nombre;
+                txtDescripcion.Text = art.Descripcion;
+                txtImagen.Text = art.Imagen;
+                ///txtPrecio.Text = (Sqlmoney)art.Precio;    ///RESOLVER!!!!
+                cbCategoria.SelectedValue = art.categoria.Id;
+                Text = "Modificacion De Registro";
+
+            }
+        
+
         }
     }
 }
