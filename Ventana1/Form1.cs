@@ -71,8 +71,8 @@ namespace Ventana1
             Articulos art;
             art = (Articulos)dgvGrilla.CurrentRow.DataBoundItem;
             fmAlta modificar = new fmAlta(art);
+            modificar.ShowDialog();
             Cargar();
-
         }
     }
 }

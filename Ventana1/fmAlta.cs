@@ -36,30 +36,29 @@ namespace Ventana1
         {
             
             ArticuloNegocio negocio = new ArticuloNegocio();
-            ///agregar validaciones chequeado, pero masomenos. hay que ponerle un poquito mas de polenta
-            bool banderita = true;
-            if (txtCodArt.TextLength ==0 )
-            {   
-                banderita = false;
-                txtCodArt.BackColor = Color.Red;
-            }    
-            if (txtDescripcion.TextLength == 0)
-            {
-                banderita = false;
-                txtDescripcion.BackColor = Color.Red;
-            }
-            if (txtNombre.TextLength == 0)
-            {
-                banderita = false;
-                txtNombre.BackColor = Color.Red;
-            }
-            if(banderita)
-            {   ///puede quedar pendiente igual pero me pone nervioso xd
+            ///validaciones 
+            //bool banderita = true;
+            //if (txtCodArt.TextLength ==0 )
+            //{   
+            //    banderita = false;
+            //    txtCodArt.BackColor = Color.Red;
+            //}    
+            //if (txtDescripcion.TextLength == 0)
+            //{
+            //    banderita = false;
+            //    txtDescripcion.BackColor = Color.Red;
+            //}
+            //if (txtNombre.TextLength == 0)
+            //{
+            //    banderita = false;
+            //    txtNombre.BackColor = Color.Red;
+            //}
+            //if(banderita)
+            //{   ///puede quedar pendiente igual pero me pone nervioso xd
 
                 if (art == null)
                     art = new Articulos();
                 
-                               
                 art.Codigo = txtCodArt.Text;
                 art.Descripcion = txtDescripcion.Text;
                 art.Nombre = txtNombre.Text;
@@ -74,12 +73,12 @@ namespace Ventana1
                 }
                 else
                 {
-                    negocio.eliminar(art);
+                    negocio.modificar(art);
                 }
 
                 MessageBox.Show("Operación realizada con exito REY/REYNA", "Exito");
-            }
-            else { MessageBox.Show("Campos Incompletos o Invalidos", "Error Campos"); }
+          //  }
+         //   else { MessageBox.Show("Campos Incompletos o Invalidos", "Error Campos"); }
             Close();
         }
 

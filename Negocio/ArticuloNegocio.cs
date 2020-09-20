@@ -58,9 +58,25 @@ namespace Negocio
             return lista;
         }
 
-        public void eliminar(Articulos art)
-        {
-            throw new NotImplementedException();
+        public void modificar(Articulos art)
+        { AccesoDatos conexion = new AccesoDatos();
+            try
+            {
+                conexion.setearQuery("Update Articulos set Codigo = @codArt, Nombre = @nombre, Descripcion = @descripcion, IdCategoria = @idCat, IdMarca = @idMar, ImagenUrl = @urlImagen, Precio = @precio  where Id = @id");
+                conexion.agregarParametro("@codArt", art.Codigo);
+                conexion.agregarParametro("@nombre", art.Nombre);
+                conexion.agregarParametro("@descripcion", art.Descripcion);
+                conexion.agregarParametro("@idCat", art.categoria.Id);
+                conexion.agregarParametro("@idMar", art.Marca.Id);
+                conexion.agregarParametro("@urlImagen", art.Imagen);
+                conexion.agregarParametro("@precio", art.Precio);
+                conexion.agregarParametro("@id", art.Id); 
+                conexion.ejecutarAccion();
+
+            }
+            catch (Exception ex)
+            { throw ex; }
+            
         }
 
         public void agregar(Articulos nuevo)
