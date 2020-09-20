@@ -22,10 +22,10 @@ namespace Negocio
             Conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = CATALOGO_DB; integrated security = sspi";
             Comando.CommandType = System.Data.CommandType.Text;
             Comando.CommandText = "select a.id as IdArt, a.Codigo, a.nombre, a.descripcion, a.imagenurl, a.precio, c.id as IdCategoria, c.Descripcion as Categoria,m.id as IdMarca, m.Descripcion as Marca from ARTICULOS as a join CATEGORIAS c on a.IdCategoria = c.id join MARCAS as m on m.Id = a.IdMarca";
-            ///se ejecuta la conexion
+            //se ejecuta la conexion
             Comando.Connection = Conexion;
             Conexion.Open();
-            ///se manda la query a seleccionar registros
+            //se manda la query a seleccionar registros
             Lector = Comando.ExecuteReader();
             
 
@@ -44,7 +44,7 @@ namespace Negocio
 
                 Aux.categoria = new Categoria();
                 Aux.categoria.Id = (int)Lector["IdCategoria"];
-                Aux.categoria.Descripcion = (string)Lector["categoria"];
+                Aux.categoria.Descripcion = (string)Lector["Categoria"];
  
                 Aux.Marca = new Marca();
                 Aux.Marca.Descripcion = (string) Lector ["marca"];
@@ -68,7 +68,7 @@ namespace Negocio
             Conexion.ConnectionString = "data source = .\\SQLEXPRESS; initial catalog = CATALOGO_DB; integrated security = sspi";
             Comando.CommandType = System.Data.CommandType.Text;
             //Comando.CommandText = "insert into ARTICULOS (Nombre, Descripcion, ImagenUrl, IdCategoria ) values (@Nombre,@Descripcion,@ImagenUrl,@IdCategoria)";
-            Comando.CommandText = "insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, IdCategoria, IdMarca ) values (@CodigoArt, @Nombre,@Descripcion,@ImagenUrl,@IdCategoria,@IdMarca)";
+            Comando.CommandText = "insert into ARTICULOS (Codigo, Nombre, Descripcion, ImagenUrl, IdCategoria, IdMarca, Precio ) values (@CodigoArt, @Nombre,@Descripcion,@ImagenUrl,@IdCategoria,@IdMarca, @precio)";
 
             Comando.Parameters.AddWithValue("@CodigoArt", nuevo.Codigo);
             Comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
@@ -76,6 +76,7 @@ namespace Negocio
             Comando.Parameters.AddWithValue("@ImagenUrl", nuevo.Imagen);
             Comando.Parameters.AddWithValue("@IdCategoria", nuevo.categoria.Id);
             Comando.Parameters.AddWithValue("@IdMarca", nuevo.Marca.Id);
+            Comando.Parameters.AddWithValue("@precio", nuevo.Precio);
             Comando.Connection = Conexion;
             Conexion.Open();
             //Hola Cristian cotitooo
@@ -105,11 +106,20 @@ namespace Negocio
         }
 
 
-        public void eliminar (Articulos art)
+        public void eliminar (int Id)
         {
+            AccesoDatos conexion = new AccesoDatos();
+            try
+            {
+                conexion.setearQuery(" DELETE FROM ARTICULOS WHERE Id= @id");
+                conexion.agregarParametro("@id", Id);
+                conexion.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
-
-
+                throw ex;
+            }
 
         }
 

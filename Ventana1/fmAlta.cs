@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,15 @@ namespace Ventana1
         public fmAlta()
         {
             InitializeComponent();
+        }
+        public fmAlta(Articulos art, int bandera)
+        {
+            InitializeComponent();
+            txtNombre.Enabled = false;
+            txtDescripcion.Enabled = false;
+            txtCodArt.Enabled = false;
+
+
         }
         public fmAlta(Articulos Art)
         {
@@ -36,25 +46,29 @@ namespace Ventana1
         {
             
             ArticuloNegocio negocio = new ArticuloNegocio();
-            ///validaciones 
-            //bool banderita = true;
-            //if (txtCodArt.TextLength ==0 )
-            //{   
-            //    banderita = false;
-            //    txtCodArt.BackColor = Color.Red;
-            //}    
-            //if (txtDescripcion.TextLength == 0)
-            //{
-            //    banderita = false;
-            //    txtDescripcion.BackColor = Color.Red;
-            //}
-            //if (txtNombre.TextLength == 0)
-            //{
-            //    banderita = false;
-            //    txtNombre.BackColor = Color.Red;
-            //}
-            //if(banderita)
-            //{   ///puede quedar pendiente igual pero me pone nervioso xd
+            //validaciones 
+            bool banderita = true;
+            if (txtCodArt.TextLength ==0 )
+            {   
+                banderita = false;
+                txtCodArt.BackColor = Color.Red;
+            }    
+            if (txtDescripcion.TextLength == 0)
+            {
+                banderita = false;
+                txtDescripcion.BackColor = Color.Red;
+            }
+            if (txtNombre.TextLength == 0)
+            {
+                banderita = false;
+                txtNombre.BackColor = Color.Red;
+            }
+            if( txtPrecio.TextLength == 0)
+            { banderita = false;
+                txtPrecio.BackColor = Color.Red;    
+            }
+            if(banderita)
+            {   
 
                 if (art == null)
                     art = new Articulos();
@@ -65,9 +79,8 @@ namespace Ventana1
                 art.categoria = (Categoria)cbCategoria.SelectedItem;
                 art.Marca = (Marca)cbMarca.SelectedItem;
                 art.Imagen = txtImagen.Text;
-                //negocio.agregar(art);
-
-                if (art.Id == 0)
+                art.Precio = Convert.ToDecimal(txtPrecio.Text);
+                    if (art.Id == 0)
                 {
                     negocio.agregar(art);
                 }
@@ -77,9 +90,9 @@ namespace Ventana1
                 }
 
                 MessageBox.Show("Operación realizada con exito REY/REYNA", "Exito");
-          //  }
-         //   else { MessageBox.Show("Campos Incompletos o Invalidos", "Error Campos"); }
-            Close();
+           }
+           else { MessageBox.Show("Campos Incompletos o Invalidos", "Error Campos"); }
+         Close();
         }
 
         private void fmAlta_Load(object sender, EventArgs e)
@@ -90,8 +103,10 @@ namespace Ventana1
             cbMarca.DataSource = marcNegocio.Listar();
             cbCategoria.ValueMember = "Id";
             cbCategoria.DisplayMember = "Descripcion";
-            //if(cbCategoria.SelectedIndex >0)
-                cbCategoria.SelectedIndex = -1;
+            cbMarca.ValueMember = "Id";
+            cbMarca.DisplayMember = "Descripcion";
+            cbCategoria.SelectedIndex = -1;
+            cbMarca.SelectedIndex = -1;
             //parte s de marca iguales a esto
             if (art != null)
             {
@@ -99,13 +114,42 @@ namespace Ventana1
                 txtNombre.Text = art.Nombre;
                 txtDescripcion.Text = art.Descripcion;
                 txtImagen.Text = art.Imagen;
-                ///txtPrecio.Text = (Sqlmoney)art.Precio;    ///RESOLVER!!!!
+                txtPrecio.Text = Convert.ToString(art.Precio);  
                 cbCategoria.SelectedValue = art.categoria.Id;
+                cbMarca.SelectedValue = art.Marca.Id;
                 Text = "Modificacion De Registro";
 
             }
         
 
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48 || e.KeyChar > 59) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
+        private void btnAceptar_MouseLeave(object sender, EventArgs e)
+        {
+            btnAceptar.Cursor = Cursors.Arrow;
+        }
+
+        private void btnAceptar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnAceptar.Cursor = Cursors.Hand;
+
+        }
+
+        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCancelar.Cursor = Cursors.Hand;
+
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCancelar.Cursor = Cursors.Arrow;
         }
     }
 }
