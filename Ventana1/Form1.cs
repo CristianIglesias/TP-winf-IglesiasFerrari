@@ -34,6 +34,7 @@ namespace Ventana1
             dgvGrilla.Columns[0].Visible = false;
             dgvGrilla.Columns[1].Visible = false;
             dgvGrilla.Columns[3].Visible = false;
+            dgvGrilla.Columns[4].Visible = false;
             dgvGrilla.Columns[6].Visible = false;
         }
 
@@ -105,7 +106,7 @@ namespace Ventana1
         {
             Articulos art;
             art = (Articulos)dgvGrilla.CurrentRow.DataBoundItem;
-            fmAlta modificar = new fmAlta(art, -1);
+            fmAlta modificar = new fmAlta(art, false);
             modificar.ShowDialog();
             Cargar();
         }
@@ -146,6 +147,18 @@ namespace Ventana1
             btnEliminar.Cursor = Cursors.Hand;
         }
 
-       
+        private void dgvGrilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            Articulos art;
+            art = (Articulos)dgvGrilla.CurrentRow.DataBoundItem;
+            fmAlta modificar = new fmAlta(art, false);
+            modificar.ShowDialog();
+            Cargar();
+        }
     }
 }

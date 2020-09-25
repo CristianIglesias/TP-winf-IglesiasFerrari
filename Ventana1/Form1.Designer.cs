@@ -37,6 +37,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
+            this.btnDetalle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGrilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
@@ -49,8 +50,9 @@
             this.dgvGrilla.Location = new System.Drawing.Point(12, 144);
             this.dgvGrilla.MultiSelect = false;
             this.dgvGrilla.Name = "dgvGrilla";
-            this.dgvGrilla.Size = new System.Drawing.Size(646, 150);
+            this.dgvGrilla.Size = new System.Drawing.Size(441, 150);
             this.dgvGrilla.TabIndex = 0;
+            this.dgvGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellContentClick);
             this.dgvGrilla.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrilla_CellDoubleClick);
             this.dgvGrilla.SelectionChanged += new System.EventHandler(this.dgvGrilla_SelectionChanged);
             // 
@@ -72,9 +74,9 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(111)))), ((int)(((byte)(60)))));
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(169, 386);
+            this.btnAgregar.Location = new System.Drawing.Point(139, 329);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(120, 34);
+            this.btnAgregar.Size = new System.Drawing.Size(86, 32);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -84,7 +86,7 @@
             // 
             // pbImagen
             // 
-            this.pbImagen.Location = new System.Drawing.Point(678, 63);
+            this.pbImagen.Location = new System.Drawing.Point(490, 35);
             this.pbImagen.Name = "pbImagen";
             this.pbImagen.Size = new System.Drawing.Size(310, 311);
             this.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -96,9 +98,9 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(111)))), ((int)(((byte)(60)))));
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(322, 386);
+            this.btnModificar.Location = new System.Drawing.Point(253, 329);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(120, 34);
+            this.btnModificar.Size = new System.Drawing.Size(86, 32);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -111,9 +113,9 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(111)))), ((int)(((byte)(60)))));
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(475, 386);
+            this.btnEliminar.Location = new System.Drawing.Point(367, 329);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(120, 34);
+            this.btnEliminar.Size = new System.Drawing.Size(86, 32);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -143,12 +145,26 @@
             this.lblBuscar.Text = "Filtrar la búsqueda por :";
             this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
             // 
+            // btnDetalle
+            // 
+            this.btnDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(111)))), ((int)(((byte)(60)))));
+            this.btnDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDetalle.Location = new System.Drawing.Point(25, 329);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(86, 32);
+            this.btnDetalle.TabIndex = 10;
+            this.btnDetalle.Text = "Ver Detalle";
+            this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(55)))), ((int)(((byte)(84)))));
-            this.ClientSize = new System.Drawing.Size(1011, 476);
+            this.ClientSize = new System.Drawing.Size(833, 394);
+            this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnEliminar);
@@ -158,8 +174,8 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.dgvGrilla);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1027, 515);
-            this.MinimumSize = new System.Drawing.Size(1027, 515);
+            this.MaximumSize = new System.Drawing.Size(849, 433);
+            this.MinimumSize = new System.Drawing.Size(849, 433);
             this.Name = "Form1";
             this.Text = "Catálogo";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -180,6 +196,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Button btnDetalle;
     }
 }
 

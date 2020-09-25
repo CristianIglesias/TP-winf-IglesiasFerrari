@@ -20,13 +20,17 @@ namespace Ventana1
         {
             InitializeComponent();
         }
-        public fmAlta(Articulos art, int bandera)
+        public fmAlta(Articulos Art, bool bandera)
         {
             InitializeComponent();
+            art = Art;
             txtNombre.Enabled = false;
             txtDescripcion.Enabled = false;
             txtCodArt.Enabled = false;
-
+            cbCategoria.Enabled = false;
+            cbMarca.Enabled = false;
+            txtImagen.Enabled = false;
+            txtPrecio.Enabled = false;
 
         }
         public fmAlta(Articulos Art)
