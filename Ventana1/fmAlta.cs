@@ -146,10 +146,12 @@ namespace Ventana1
             btnCancelar.Cursor = Cursors.Hand;
 
         }
-
+        
         private void btnCancelar_MouseLeave(object sender, EventArgs e)
         {
             btnCancelar.Cursor = Cursors.Arrow;
+            
+
         }
     }
 }

@@ -32,8 +32,9 @@ namespace Ventana1
             listaOriginal = negocio.Listar();
             dgvGrilla.DataSource = listaOriginal;
             dgvGrilla.Columns[0].Visible = false;
-            dgvGrilla.Columns[4].Visible = false;
-
+            dgvGrilla.Columns[1].Visible = false;
+            dgvGrilla.Columns[3].Visible = false;
+            dgvGrilla.Columns[6].Visible = false;
         }
 
         private void dgvGrilla_SelectionChanged(object sender, EventArgs e)
